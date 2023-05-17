@@ -1,0 +1,132 @@
+Arrow Function
+Print odd numbers
+
+const arr=[12,23,61,52,72,80]
+const odd=arr.filter(n => n%2)
+    console.log(odd);
+
+
+Convert all string to title caps in string array
+
+const text = "guvi geek"
+const titlecase=text.toLowerCase().replace(/\b\w/g, s => s.toUpperCase());
+console.log(titlecase);
+
+
+Sum all numbers in array
+
+const sum = [21,34,21,76,43].reduce((partialSum, a) => partialSum + a);
+console.log(sum);
+
+Return all prime number in array
+
+ var primenumber = [1,2,3,4,5,6,7,8,9,10,11,13,15,17,19,22]
+  primenumber = primenumber.filter((number) => {
+  for (var i = 2; i <= Math.sqrt(number); i++) {
+    if (number % i === 0) return false;
+  }
+  return true;
+});
+console.log(primenumber);
+Return all palindromes in an array
+
+const Palindromes = (words) => words.filter((word) => word.split("").reverse().join("") === word);
+
+console.log(Palindromes(["hello","dad", "noon","mom","dance","wow"]));
+
+
+IIFE function
+
+1.(function(array1){
+    for(var i = 0 ; i< array1.length ; i++){
+               if(array1[i]%2!=0){
+                  console.log((array1[i]))
+               } 
+          }})([11,32,15,37,89,23,22,32,07])
+
+2.let string_array1=["guvi","geek","title","caps"]
+         console.log(
+         (function(string_array){
+            let titlecapped_array=[];
+             for(let str of string_array){
+                 titlecapped_array.push(str.charAt(0).toUpperCase()+str.slice(1));
+         }
+         return titlecapped_array
+         })(string_array1))
+
+
+3.let num22=[64,21,34,87,32]
+        console.log(
+        (function(num2){
+        let sum=0;
+        for (let index in num2){
+             sum+=num2[index];                                       
+            }
+            return sum;
+        })(num22))
+
+
+4.let num123=[1,2,3,4,5,6,7,8,9,10]
+        console.log(                             
+         (function(num1){
+          let primenumber=[];
+          for (let v of num1){
+                if(v>1){
+                      let flag=true;
+                      for(let i=2;i<v;i++){                            
+                            v%i===0?flag=false:true;                    
+                      }flag?primenumber.push(v):true;
+                }
+          }
+          return primenumber;
+         }(num123)))
+
+
+
+Anonymous function
+
+1.let arr1=[11,32,15,37,89,23,32,07]
+         let oddnumber=function(arr){
+             let odd_arr=[];
+             for(let num of arr){
+                (num%2!==0)? odd_arr.push(num) : num;                    
+                }
+             return odd_arr
+            }
+         console.log(oddnumber(arr1))
+
+
+2.let string_array=["guvi","geek","title","caps"]
+         let titlecap=function(arr){
+         titlecapped_array=[];
+             for (let index in arr){
+                 titlecapped_array.push(arr[index].charAt(0).toUpperCase()+arr[index].slice(1));     
+                                                                                                
+         }
+         console.log(titlecapped_array)
+         }
+         titlecap(string_array)
+
+
+3.let num=[64,21,34,87,32]
+         let sum=function(...array){                                      
+             for (let index in array){
+                 console.log((array[index].reduce((previousvalue, currentvalue) => previousvalue + currentvalue,0)))
+                 }
+         }
+         sum(num)  
+
+
+4.let num4=[1,2,3,4,5,6,7,8,9,10]
+let primenumbers=[];
+let prime=function(arr){
+      for(let aa of arr){
+      if(aa>1){
+            let flag=true;                                      
+            for(let i=2;i<aa;i++){
+                  aa%i===0? flag=false:true;                    
+            }flag?primenumbers.push(aa):true;
+      }
+}}
+prime(num4)
+console.log(primenumbers);
